@@ -50,7 +50,7 @@ const scanRoll= async(product)=>{
       if(JSON.stringify(res,null,2).includes(": 500,")){
         alert("Rollo ya escaneado");     
       }
-      //window.location='https://rolls-liard.vercel.app/';
+      window.location='https://rolls-liard.vercel.app/';
       
   }).catch((error=>{
       
