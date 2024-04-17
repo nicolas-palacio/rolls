@@ -45,13 +45,12 @@ getProduct();
 const scanRoll= async(product)=>{
   spinner.classList.remove("d-none");
   QRscanner.classList.add("hidden")
-
-  await axios.post(API_URL+"?action=getRollo&product="+product)
+  await axios.post(API_URL+"?action=getRollo&product="+product[1])
   .then((res)=>{      
       if(JSON.stringify(res,null,2).includes(": 500,")){
         alert("Rollo ya escaneado");     
       }
-      window.location='https://rolls-liard.vercel.app/';
+      //window.location='https://rolls-liard.vercel.app/';
       
   }).catch((error=>{
       
@@ -61,13 +60,12 @@ const scanRoll= async(product)=>{
 };
 
 
-
 const qrCodeSuccessCallback = (decodedText, decodedResult)=>{
     if(decodedText){
          document.getElementById('show').style.display = 'block';
          document.getElementById('result').textContent = decodedText;
          html5Qrcode.stop();
-         scanRoll(decodedText);
+         scanRoll(decodedText.split("&"));
      }
   }
 const config = {fps:10, qrbox:{width:250, height:250}}
