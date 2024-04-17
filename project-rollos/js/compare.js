@@ -1,5 +1,5 @@
 const spinner=document.getElementById('spinner-card');
-const API_URL='https://script.google.com/macros/s/AKfycbyxWd0cVK0-W-fMpywkA2jS48cYDGz9sq1fRoNgP-ykilgqsfrJPyeHH_4wKAQYywiH/exec';
+const API_URL='https://script.google.com/macros/s/AKfycbwozEbTCkDvZa9Xt8WwO4D3UjYa4CYV_IBmqcdgkxHWMOvfA1mA57d73Hu8RVAVLozj/exec';
 
 const rollsList=document.getElementById('rolls-list');
 const btnHome=document.getElementById('btn-home');
