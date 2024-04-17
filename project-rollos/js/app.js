@@ -92,20 +92,7 @@ const cerrarCamara = () => {
 
 
 btnAccept.addEventListener("click",(e)=>{
-    const amountInt=parseInt(enterField.value);   
-        
-    fetch(API_URL+"?action=compare", {
-        redirect: "follow",
-        method: "GET",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8",
-        },
-      }).then(function(response){
-        formCard.classList.add("d-none");
-        QRscanner.classList.remove("d-none");
-        encenderCamara2();
-        
-      })
+    window.location="https://rolls-liard.vercel.app/compare.html";
 });
 
 encenderCamara2();
