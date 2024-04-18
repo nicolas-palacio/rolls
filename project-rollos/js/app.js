@@ -28,7 +28,7 @@ const getProduct=async ()=>{
 
     await axios.get(API_URL+"?action=getRollo")
     .then((res)=>{
-        console.log(res);
+        //console.log(res);
         spinner.classList.add("d-none");  
         rollsAmount.classList.remove("d-none");              
         rollsAmount.innerHTML='Rollos contados: '+res.data.amount;     
@@ -45,7 +45,7 @@ getProduct();
 const scanRoll= async(product)=>{
   spinner.classList.remove("d-none");
   QRscanner.classList.add("hidden")
-  await axios.post(API_URL+"?action=getRollo&product="+product[1])
+  await axios.post(API_URL+"?action=getRollo&product="+product)
   .then((res)=>{      
       if(JSON.stringify(res,null,2).includes(": 500,")){
         alert("Rollo ya escaneado");     
@@ -65,7 +65,9 @@ const qrCodeSuccessCallback = (decodedText, decodedResult)=>{
          document.getElementById('show').style.display = 'block';
          document.getElementById('result').textContent = decodedText;
          html5Qrcode.stop();
-         scanRoll(decodedText.split("&"));
+         var codeQR=decodedText.split("&&");
+         
+         scanRoll(codeQR[codeQR.length-2].substring(1));
      }
   }
 const config = {fps:10, qrbox:{width:250, height:250}}
