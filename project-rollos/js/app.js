@@ -15,7 +15,7 @@ const spinner=document.getElementById('spinner-card');
 
 const queryString=window.location.search;
 const urlParams= new URLSearchParams(queryString);
-const API_URL='https://script.google.com/macros/s/AKfycbwozEbTCkDvZa9Xt8WwO4D3UjYa4CYV_IBmqcdgkxHWMOvfA1mA57d73Hu8RVAVLozj/exec'
+const API_URL='https://script.google.com/macros/s/AKfycbyOwxKZtp80VTRto_uuONE6w-8pAB3OybEQVjPeOgoYRm8BwRNkLQt2W8XdqOJYx_LE/exec'
 
 
 btnShowTable.addEventListener('click',(e)=>{
